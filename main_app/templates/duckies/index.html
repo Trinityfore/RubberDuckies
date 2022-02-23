@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Duck List</h1>
+
+{% for duck in duckies %}
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ duck.name }}</span>
+            <p>Year Made: {{ duck.year }} </p>
+            <p>Description: {{ duck.description }}</p>
+            <p>Price: {{duck.price}}</p>
+         
+                
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}
