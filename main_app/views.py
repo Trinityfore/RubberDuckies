@@ -10,7 +10,7 @@ def about(request):
     return render(request, 'about.html') 
 
 def duckies_index(request):
-    ducks = Ducks.objects.all()
+    ducks = Duck.objects.all()
     return render(request, 'duckies/index.html', {'ducks' : ducks})
 
 def duckies_detail(request, duck_id):
