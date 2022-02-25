@@ -2,19 +2,15 @@
 
 {% block content %}
 
-<h1>Cat Detail</h1>
+<h1>Duck Detail</h1>
 
 
     <div class="card">
         <div class="card-content">
-            <span class="card-title">{{ cat.name }}</span>
-            <p>Breed: {{ cat.breed }} </p>
+            <span class="card-title">{{ duck.name }}</span>
+            <p>Year Made: {{ duck.year }} </p>
             <p>Description: {{cat.description}}</p>
-           {% if cat.age > 0 %}
-                <p>Age: {{ cat.age }} </p>
-                {% else %}
-                <p> age: kitten </p>
-                {% endif %}
+            <p>Price: {{duck.price}}</p>
         </div>
         <div class="card-action">
             <a href="{% url 'cats_update' cat.id %}">Edit</a>
