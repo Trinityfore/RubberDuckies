@@ -5,17 +5,84 @@
 <h1>Duck Detail</h1>
 
 
-    <div class="card">
-        <div class="card-content">
-            <span class="card-title">{{ duck.name }}</span>
-            <p>Year Made: {{ duck.year }} </p>
-            <p>Description: {{cat.description}}</p>
-            <p>Price: {{duck.price}}</p>
+
+<div class="row">
+        <div class="col s6">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">{{ duck.name }}</span>
+                    <p>Year Made: {{ duck.year }}</p>
+                    <p> Value: {{ duck.price }}</p>
+                    <p>Description: {{duck.description }}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{% url %}">Edit</a>
+                    <a href="{% url %}">Delete</a>
+                </div>
+            </div>
         </div>
-        <div class="card-action">
-            <a href="{% url 'cats_update' cat.id %}">Edit</a>
-            <a href="{% url 'cats_delete' cat.id %}">Delete</a>
         </div>
+     <div class="col s6">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ }}
+            <input type="submit" value="Change Location" class="btn blue">
+        </form>
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for location in cat.location_set.all %}
+                    <tr>
+                        <td>{{ location.date }}</td>
+                        <td>{{ location.get_location_display }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+
+<hr>
+
+<div class="row">
+    <div class="col s6">
+        <h3>{{ duck.name }}'s Accessories</h3>
+        {% if duck.accessories.count %}
+            {% for accessorie in duck.accessories.all %}
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">
+                            A <span class="{{ accessorie.color.lower }}-text">{{ accessorie.color }}</span> {{ accessorie.name }}
+                        </span>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h6>{{ duck.name }} has no accessories at this time </h6>
+        {% endif %}
     </div>
+    
+    <div class="col s6">
+        <h3>Available Accessories</h3>
+        {% if accessories.count %}
+            {% for accessorie in accessories %}
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title"></span></div>
+                </div>
+
+    </div>
+
+
+
+</div>
+
+
+
     
 {% endblock %}
