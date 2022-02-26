@@ -16,17 +16,19 @@
                     <p>Description: {{duck.description }}</p>
                 </div>
                 <div class="card-action">
-                    <a href="{% url %}">Edit</a>
-                    <a href="{% url %}">Delete</a>
+                    <a href="{% url 'duckies_update' duck.id %}">Edit</a>
+                    <a href="{% url 'duckies_delete' duck.id %}">Delete</a>
                 </div>
             </div>
+            <!-- add the photo card here -->
         </div>
         </div>
+
      <div class="col s6">
-        <form action="" method="POST">
+        <form action="{% url 'add_location' duck.id %}" method="POST">
             {% csrf_token %}
-            {{ }}
-            <input type="submit" value="Change Location" class="btn blue">
+            {{ location_form.as_p }}
+            <input type="submit" value="Add Location" class="btn blue">
         </form>
         <table class="striped">
             <thead>
@@ -73,8 +75,21 @@
             {% for accessorie in accessories %}
                 <div class="card">
                     <div class="card-content">
-                        <span class="card-title"></span></div>
+                        <span class="card-title">
+                            A <span class="{{ accessorie.color.lower}}--text">{{ accessorie.name }}</span>
+                        </span>
+                    </div>
+                    <div class="card-action">
+                        <form action="{ url 'assoc_access' duck.id accessorie.id}" method="POST">
+                            { csrf_token }
+                            <button type="submit" class="btn green">Add</button>
+                        </form>
+                    </div>
                 </div>
+            {% endfor %}
+        {% else %}
+             <h6>{{ duck.name }} already has all accessories available</h6>
+        {% endif %}
 
     </div>
 
