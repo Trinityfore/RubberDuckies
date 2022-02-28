@@ -45,16 +45,16 @@ def assoc_access(request, duck_id, accessorie_id):
 class DuckCreate(CreateView): 
     model = Duck
     fields = '__all__'
-    success_url = '/cats/'
+    success_url = '/duckies/'
 
 
 class DuckUpdate(UpdateView):
     model = Duck
-    fields = ('name', 'breed', 'description', 'age')
+    fields = ('name', 'year', 'description', 'price')
 
 class DuckDelete(DeleteView):
     model = Duck
-    success_url = '/cats/'
+    success_url = '/duckies/'
 
 class AccessorieCreate(CreateView):
     model = Accessories

@@ -23,8 +23,11 @@
             </li>
           </ul>
           <ul class="right">
-            <li><a href="/about">About</a></li>
-            <li><a href="/duckies">Duckies</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'accessories_create' %}">Add an Accessorie</a></li>
+            <li><a href="{% url 'accessories_index' %}">View All Accessories</a></li>
+            <li><a href="{% url 'ducks_create' %}">Add a Duck</a></li>
+            <li><a href="{% url 'index' %}">View all Ducks</a></li>
           </ul>
         </div>
       </nav>
