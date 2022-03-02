@@ -10,9 +10,11 @@
             <span class="card-title">A<span class="{{ accessorie.color.lower }}-text">{{ accessorie.color }}</span> {{ accessorie.name }}</span>
         </div>
         <div class="card-action">
-            <a href="{% url 'accessorie_update' accessorie.id%}">Edit</a>
-            <a href="{% url 'accessorie_delete' accessorie.id%}">Delete</a>
+            <a href="{% url 'accessories_update' accessories.id%}">Edit</a>
+            <a href="{% url 'accessories_delete' accessories.id%}">Delete</a>
         </div>
 
     </a>
 </div>
+
+{% endblock %}
