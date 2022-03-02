@@ -5,16 +5,16 @@
 <h1>Accessories</h1>
 
 <div class="card">
-    <a href="{% url 'accessories_detail' accessories.id %}">
+    
         <div class="card-content">
-            <span class="card-title">A<span class="{{ accessorie.color.lower }}-text">{{ accessorie.color }}</span> {{ accessorie.name }}</span>
+            <span class="card-title"> <span class="{{ accessories.color.lower }}-text">{{ accessories.color }}</span> {{ accessories.name }}</span>
         </div>
         <div class="card-action">
             <a href="{% url 'accessories_update' accessories.id%}">Edit</a>
             <a href="{% url 'accessories_delete' accessories.id%}">Delete</a>
         </div>
 
-    </a>
+    
 </div>
 
 {% endblock %}
