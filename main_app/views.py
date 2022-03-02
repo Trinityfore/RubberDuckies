@@ -44,7 +44,7 @@ def assoc_access(request, duck_id, accessorie_id):
 
 class DuckCreate(CreateView): 
     model = Duck
-    fields = '__all__'
+    fields = ('name', 'year', 'description', 'price')
     success_url = '/duckies/'
 
 

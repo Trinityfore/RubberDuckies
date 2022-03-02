@@ -4,8 +4,9 @@
 
 <h1>Duck List</h1>
 
-{% for duck in duckies %}
+{% for duck in ducks %}
     <div class="card">
+        <a href="">
         <div class="card-content">
             <span class="card-title">{{ duck.name }}</span>
             <p>Year Made: {{ duck.year }} </p>
@@ -14,6 +15,7 @@
          
                 
         </div>
+        </a>
     </div>
     {% endfor %}
 
